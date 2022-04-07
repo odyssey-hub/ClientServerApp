@@ -1,0 +1,56 @@
+  public void SendToServer()
+        {
+            //List<FileInfo> getfiles = SendFileList();
+            //SendFilesToServer(getfiles);
+
+
+            /*
+            client = new TcpClient("127.0.0.1", 9999);
+            NetworkStream stream = client.GetStream();
+            BinaryFormatter format = new BinaryFormatter();
+            byte[] buf = new byte[1024];
+            int count;
+            FileStream fs = new FileStream("СпецЛаб3.docx", FileMode.Open);
+            BinaryReader br = new BinaryReader(fs);
+            long k = fs.Length;//Размер файла.
+            format.Serialize(stream, k.ToString());//Вначале передаём размер
+            while ((count = br.Read(buf, 0, 1024)) > 0)
+            {
+                format.Serialize(stream, buf);//А теперь в цикле по 1024 байта передаём файл
+            }
+            */
+            /*
+            string message = "Message";
+                // преобразуем сообщение в массив байтов
+            byte[] data = Encoding.Unicode.GetBytes(message);
+                // отправка сообщения
+            stream.Write(data, 0, data.Length);
+            */
+            // получаем ответ
+            /*
+            data = new byte[64]; // буфер для получаемых данных
+            StringBuilder builder = new StringBuilder();
+            int bytes = 0;
+            do
+            {
+                bytes = stream.Read(data, 0, data.Length);
+                builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
+            }
+            while (stream.DataAvailable);
+
+            message = builder.ToString();
+            */
+        }
+
+        public void RunSync()
+        {
+            while (true)
+            {
+                SendWhatsNew();
+                Thread.Sleep(10000);
+            }
+        }
+            /*
+            var thread = new Thread(RunSync);
+            thread.Start();
+            */
